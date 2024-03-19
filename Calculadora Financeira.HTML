@@ -1,0 +1,78 @@
+<DOCTYPE html>
+  <html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    
+    <div class="pai">
+
+      <div class="conteiner">
+      
+        <header>
+        <h1> Calculadora Financeira </h1>
+        </header>
+        <div class="inputs"> Qual é o custo do peixe (Real / Kg): 
+          <input id="input_custo_peixe" type= "number" placeholder="Custo" name="CustoPeixe" required> <br> <br>
+
+        Por qual valor ele é vendido por você? (Real / Kg): 
+        <input id="input_valor_vendido" type="number" placeholder="Valor vendido" name="valorVendido" required> <br> <br>
+
+        Qual é a sua porcentagem de perda anual? <br>(se não souber, digite "não sei", e então daremos um valor padrão de perda).
+        <input id="input_porcentagem_perda" placeholder="Porcentagem de perda" name="PorcentagemPerda" required> <br> <br>
+
+        Qual é a sua produção anual? (Kg): 
+        <input id="input_produçao_anual" type="number" placeholder="Produção anual" name="ProduçãoAnual" required> <br> <br>
+
+        <button onclick="calculo_prejuizo()"> Calcular </button>
+          </div>
+    
+      <div id="div_mensagem" ; class="innerHTML"> </div>
+    </div> 
+  </div>
+  
+  </body>
+
+  </html>
+
+  <script>
+
+    //alert('Olá! Aqui trouxemos para você uma calculadora financeira. Na qual irá analisar os financiais da sua criação, relacionada ao nosso Projeto.')
+
+    function calculo_prejuizo(){
+      var CUSTO_PEIXE = Number(input_custo_peixe.value)
+      var VALOR_VENDA = Number(input_valor_vendido.value)
+      var PORCENTAGEM_PERDA = (input_porcentagem_perda.value)
+      var PRODUÇAO_ANUAL = Number(input_produçao_anual.value)
+      var LUCRO = (PRODUÇAO_ANUAL * VALOR_VENDA)
+      
+      var PERCA_sem_projeto = 0
+      if (PORCENTAGEM_PERDA == "não sei"){
+        var PERCA_sem_projeto = Number(LUCRO * 0.15)
+      } else (
+        PERCA_sem_projeto = (LUCRO *(PORCENTAGEM_PERDA /100))
+      )
+       
+      
+      var PERCA_com_projeto = (PERCA_sem_projeto * 0.66) 
+      var DINHEIRO_SALVO = (PERCA_sem_projeto - PERCA_com_projeto)
+      var LUCRO_com_projeto = ( LUCRO - PERCA_com_projeto) 
+      var LUCRO_sem_projeto = ( LUCRO - PERCA_sem_projeto)
+
+      
+      
+     
+     
+      div_mensagem.innerHTML = (` A sua perca anual <b>sem</b> o projeto é de: <b>R$${PERCA_sem_projeto}</b><br>
+      <b>Com</b> o projeto salvaríamos um total de: <b>R$${DINHEIRO_SALVO}</b> <br> Diminuindo essa perca para <b>R$${PERCA_com_projeto}</b> <br>
+      Ou seja, <b>sem</b> o projeto, seu lucro seria de: <b>R$${LUCRO_sem_projeto}</b> <br>Já <b>com</b> o nosso Negócio em mãos, 
+      irá lucrar um total de: <b>R$${LUCRO_com_projeto} por ano!</b>`)
+      
+
+    }
+  </script>

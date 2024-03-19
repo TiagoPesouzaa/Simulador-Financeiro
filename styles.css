@@ -1,0 +1,42 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.inputs {
+    padding: 15px;
+    border: 1px solid rgb(204, 181, 181);
+    border-radius: 50px;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.conteiner{
+    
+   
+    background-image: url(https://i0.wp.com/pisa.tur.br/blog/wp-content/uploads/2018/04/Pirarucu-1.jpg?ssl=1) ;
+    text-align: center;
+    margin: 0;
+    background-color: rgb(29, 72, 99);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 35ex;
+    width: 1000px;
+    height: fit-content;
+  
+}
+
+
+
+.innerHTML{
+    text-align: center;
+    margin: 20px; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    border: 1px solid white;
+    border-radius: 40px;
+    background-color: rgb(87, 185, 118);
+    
+}
